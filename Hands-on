@@ -1,0 +1,48 @@
+calculating BMI for 5 persons until the user reads input
+using System;
+class BMI{
+    static void Main(string []args){
+    int a=0;
+    float height=0;
+    float weight=0;
+    while(a<=5){
+       height= float.Parse(Console.ReadLine());
+       weight= float.Parse(Console.ReadLine());
+       float bmi= 100*(weight/(height*height));
+       Console.WriteLine($"The BMI for the person with height {height} and weight {weight} is {bmi}");//string interpolation
+       a++;
+    } 
+  }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+class Program{
+void Name(string first, string last){//function with no return type
+    String name=String.Concat(first," ",last);//Concatenates 2 or more strings
+   Console.WriteLine($"{name} has \n First Name: {first} \n Surname: {last}") ;//string interpolation
+}
+  static void Main(string[] args){
+String student=Console.ReadLine();
+String parent=Console.ReadLine();
+Program pr=new Program();// calling the class in the program
+ pr.Name(student,parent);// calling the function with arguments/parameters
+}
+}//the parameters can be passed in any order regardless of the same order to be mentioned
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+class Program{
+void Name(ref string first, string last){
+    String name=String.Concat(first," ",last);
+   Console.WriteLine($"{name} has \n First Name: {first} \n Surname: {last}") ;
+}
+  static void Main(string[] args){
+String student=Console.ReadLine();
+String parent=Console.ReadLine();
+Program pr=new Program();
+ pr.Name( student,ref parent);//here ref need to be given at student(1st argument) since it is given for first argument in function
+}
+}//ref keyword is used to reference a variable and also it need to be given for correct parameter for same parameter else mismatch error will occur
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    
